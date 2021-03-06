@@ -1,0 +1,421 @@
+01:37:17 INFO  : Registering command handlers for SDK TCF services
+01:37:18 INFO  : Launching XSCT server: xsct.bat -interactive D:\DrexelUni\ECEC402\audio_base\audio_base.sdk\temp_xsdb_launch_script.tcl
+01:37:20 INFO  : XSCT server has started successfully.
+01:37:20 INFO  : Successfully done setting XSCT server connection channel  
+01:37:20 INFO  : Processing command line option -hwspec D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper.hdf.
+01:37:20 INFO  : Successfully done setting SDK workspace  
+03:38:31 INFO  : Registering command handlers for SDK TCF services
+03:38:31 INFO  : Launching XSCT server: xsct.bat -interactive D:\DrexelUni\ECEC402\audio_base\audio_base.sdk\temp_xsdb_launch_script.tcl
+03:38:33 INFO  : XSCT server has started successfully.
+03:38:33 INFO  : Processing command line option -hwspec D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper.hdf.
+03:38:33 INFO  : Successfully done setting XSCT server connection channel  
+03:38:33 INFO  : Successfully done setting SDK workspace  
+03:38:33 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+03:38:36 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614328626431,  Project:1614317859836
+03:38:36 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper.hdf.
+03:38:36 INFO  : Copied contents of D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+03:38:39 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+03:38:41 INFO  : 
+03:38:42 INFO  : Updating hardware inferred compiler options for testApp.
+03:38:42 INFO  : Clearing existing target manager status.
+03:50:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:50:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+03:50:35 INFO  : FPGA configured successfully with bitstream "D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+03:50:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+03:50:57 INFO  : 'fpga -state' command is executed.
+03:50:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:50:58 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+03:50:58 INFO  : 'jtag frequency' command is executed.
+03:50:58 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:50:58 INFO  : Context for 'APU' is selected.
+03:50:58 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+03:50:58 INFO  : 'configparams force-mem-access 1' command is executed.
+03:50:58 INFO  : Context for 'APU' is selected.
+03:50:58 INFO  : 'stop' command is executed.
+03:50:58 INFO  : 'ps7_init' command is executed.
+03:50:58 INFO  : 'ps7_post_config' command is executed.
+03:50:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:50:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:50:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:50:58 INFO  : The application 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/testApp/Debug/testApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:50:58 INFO  : 'configparams force-mem-access 0' command is executed.
+03:50:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:50:58 INFO  : Memory regions updated for context APU
+03:50:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:50:58 INFO  : 'con' command is executed.
+03:50:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+con
+----------------End of Script----------------
+
+03:50:58 INFO  : Launch script is exported to file 'D:\DrexelUni\ECEC402\audio_base\audio_base.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testapp.elf_on_local.tcl'
+03:52:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:52:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+03:52:54 INFO  : FPGA configured successfully with bitstream "D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+03:53:17 INFO  : Disconnected from the channel tcfchan#1.
+03:53:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+03:53:18 INFO  : 'fpga -state' command is executed.
+03:53:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:53:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+03:53:18 INFO  : 'jtag frequency' command is executed.
+03:53:18 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:53:18 INFO  : Context for 'APU' is selected.
+03:53:20 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+03:53:20 INFO  : 'configparams force-mem-access 1' command is executed.
+03:53:20 INFO  : Context for 'APU' is selected.
+03:53:20 INFO  : 'stop' command is executed.
+03:53:20 INFO  : 'ps7_init' command is executed.
+03:53:20 INFO  : 'ps7_post_config' command is executed.
+03:53:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:53:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:53:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:53:21 INFO  : The application 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/testApp/Debug/testApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:53:21 INFO  : 'configparams force-mem-access 0' command is executed.
+03:53:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:53:21 INFO  : Memory regions updated for context APU
+03:53:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:53:21 INFO  : 'con' command is executed.
+03:53:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+con
+----------------End of Script----------------
+
+03:53:21 INFO  : Launch script is exported to file 'D:\DrexelUni\ECEC402\audio_base\audio_base.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_testapp.elf_on_local.tcl'
+03:53:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+03:53:37 INFO  : 'fpga -state' command is executed.
+03:53:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:53:37 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+03:53:37 INFO  : 'jtag frequency' command is executed.
+03:53:37 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:53:37 INFO  : Context for 'APU' is selected.
+03:53:37 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+03:53:37 INFO  : 'configparams force-mem-access 1' command is executed.
+03:53:37 INFO  : Context for 'APU' is selected.
+03:53:37 INFO  : 'stop' command is executed.
+03:53:38 INFO  : 'ps7_init' command is executed.
+03:53:38 INFO  : 'ps7_post_config' command is executed.
+03:53:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:53:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:53:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:53:38 INFO  : The application 'D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/testApp/Debug/testApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:53:38 INFO  : 'configparams force-mem-access 0' command is executed.
+03:53:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:53:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:53:38 INFO  : 'con' command is executed.
+03:53:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+con
+----------------End of Script----------------
+
+03:53:38 INFO  : Disconnected from the channel tcfchan#2.
+04:00:02 WARN  : channel "tcfchan#2" closed
+04:02:23 INFO  : Registering command handlers for SDK TCF services
+04:02:23 INFO  : Launching XSCT server: xsct.bat -interactive D:\DrexelUni\ECEC402\audio_echo\audio_base\audio_base.sdk\temp_xsdb_launch_script.tcl
+04:02:25 INFO  : XSCT server has started successfully.
+04:02:25 INFO  : Successfully done setting XSCT server connection channel  
+04:02:25 INFO  : Processing command line option -hwspec D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper.hdf.
+04:02:25 INFO  : Successfully done setting SDK workspace  
+04:06:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:06:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:06:39 INFO  : FPGA configured successfully with bitstream "D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+04:06:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:06:46 INFO  : 'fpga -state' command is executed.
+04:06:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:06:47 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+04:06:47 INFO  : 'jtag frequency' command is executed.
+04:06:47 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+04:06:47 INFO  : Context for 'APU' is selected.
+04:06:47 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+04:06:47 INFO  : 'configparams force-mem-access 1' command is executed.
+04:06:47 INFO  : Context for 'APU' is selected.
+04:06:47 INFO  : 'stop' command is executed.
+04:06:48 INFO  : 'ps7_init' command is executed.
+04:06:48 INFO  : 'ps7_post_config' command is executed.
+04:06:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:06:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+04:06:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:06:51 ERROR : Memory write error at 0x100000. AP transaction timeout
+04:06:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+----------------End of Script----------------
+
+04:07:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:07:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:07:08 INFO  : FPGA configured successfully with bitstream "D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+04:07:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:07:13 INFO  : 'fpga -state' command is executed.
+04:07:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:07:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+04:07:14 INFO  : 'jtag frequency' command is executed.
+04:07:14 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+04:07:14 INFO  : Context for 'APU' is selected.
+04:07:14 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+04:07:14 INFO  : 'configparams force-mem-access 1' command is executed.
+04:07:14 INFO  : Context for 'APU' is selected.
+04:07:14 INFO  : 'stop' command is executed.
+04:07:14 INFO  : 'ps7_init' command is executed.
+04:07:14 INFO  : 'ps7_post_config' command is executed.
+04:07:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:07:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+04:07:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:07:14 INFO  : The application 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+04:07:14 INFO  : 'configparams force-mem-access 0' command is executed.
+04:07:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:07:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:07:14 INFO  : 'con' command is executed.
+04:07:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+con
+----------------End of Script----------------
+
+04:07:14 INFO  : Disconnected from the channel tcfchan#1.
+04:10:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:10:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:10:11 INFO  : FPGA configured successfully with bitstream "D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+04:10:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:10:16 INFO  : 'fpga -state' command is executed.
+04:10:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:10:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+04:10:17 INFO  : 'jtag frequency' command is executed.
+04:10:17 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+04:10:17 INFO  : Context for 'APU' is selected.
+04:10:17 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+04:10:17 INFO  : 'configparams force-mem-access 1' command is executed.
+04:10:17 INFO  : Context for 'APU' is selected.
+04:10:17 INFO  : 'stop' command is executed.
+04:10:17 INFO  : 'ps7_init' command is executed.
+04:10:17 INFO  : 'ps7_post_config' command is executed.
+04:10:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:10:17 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+04:10:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:10:18 INFO  : The application 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+04:10:18 INFO  : 'configparams force-mem-access 0' command is executed.
+04:10:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:10:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:10:18 INFO  : 'con' command is executed.
+04:10:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+con
+----------------End of Script----------------
+
+04:10:18 INFO  : Disconnected from the channel tcfchan#2.
+04:12:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:12:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:12:18 INFO  : FPGA configured successfully with bitstream "D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+04:12:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:12:24 INFO  : 'fpga -state' command is executed.
+04:12:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:12:24 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+04:12:24 INFO  : 'jtag frequency' command is executed.
+04:12:24 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+04:12:24 INFO  : Context for 'APU' is selected.
+04:12:24 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+04:12:24 INFO  : 'configparams force-mem-access 1' command is executed.
+04:12:24 INFO  : Context for 'APU' is selected.
+04:12:24 INFO  : 'stop' command is executed.
+04:12:26 INFO  : 'ps7_init' command is executed.
+04:12:26 INFO  : 'ps7_post_config' command is executed.
+04:12:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:12:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+04:12:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:12:28 ERROR : Memory write error at 0x100000. AP transaction timeout
+04:12:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+----------------End of Script----------------
+
+04:12:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:12:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:12:51 INFO  : FPGA configured successfully with bitstream "D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+04:12:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:12:57 INFO  : 'fpga -state' command is executed.
+04:12:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:12:57 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+04:12:57 INFO  : 'jtag frequency' command is executed.
+04:12:57 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+04:12:57 INFO  : Context for 'APU' is selected.
+04:12:57 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+04:12:57 INFO  : 'configparams force-mem-access 1' command is executed.
+04:12:57 INFO  : Context for 'APU' is selected.
+04:12:57 INFO  : 'stop' command is executed.
+04:12:57 INFO  : 'ps7_init' command is executed.
+04:12:57 INFO  : 'ps7_post_config' command is executed.
+04:12:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:12:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+04:12:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:12:58 INFO  : The application 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+04:12:58 INFO  : 'configparams force-mem-access 0' command is executed.
+04:12:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:12:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:12:58 INFO  : 'con' command is executed.
+04:12:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+con
+----------------End of Script----------------
+
+04:12:58 INFO  : Disconnected from the channel tcfchan#3.
+04:15:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:15:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:15:15 INFO  : FPGA configured successfully with bitstream "D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+04:15:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA" && level==0} -index 1' command is executed.
+04:15:21 INFO  : 'fpga -state' command is executed.
+04:15:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:15:21 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF227BA' is selected.
+04:15:21 INFO  : 'jtag frequency' command is executed.
+04:15:21 INFO  : Sourcing of 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+04:15:21 INFO  : Context for 'APU' is selected.
+04:15:21 INFO  : Hardware design information is loaded from 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf'.
+04:15:21 INFO  : 'configparams force-mem-access 1' command is executed.
+04:15:21 INFO  : Context for 'APU' is selected.
+04:15:22 INFO  : 'stop' command is executed.
+04:15:22 INFO  : 'ps7_init' command is executed.
+04:15:22 INFO  : 'ps7_post_config' command is executed.
+04:15:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:15:22 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+04:15:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:15:22 INFO  : The application 'D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+04:15:22 INFO  : 'configparams force-mem-access 0' command is executed.
+04:15:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+loadhw -hw D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/system_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+dow D:/DrexelUni/ECEC402/audio_echo/audio_base/audio_base.sdk/testApp/Debug/testApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:15:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:15:22 INFO  : 'con' command is executed.
+04:15:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF227BA"} -index 0
+con
+----------------End of Script----------------
+
+04:15:22 INFO  : Disconnected from the channel tcfchan#4.

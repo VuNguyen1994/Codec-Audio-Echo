@@ -1,0 +1,76 @@
+04:12:05 **** Incremental Build of configuration Debug for project testApp ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+04:12:23 **** Incremental Build of configuration Debug for project testApp ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+04:12:56 **** Incremental Build of configuration Debug for project testApp ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+04:14:12 **** Auto Build of configuration Debug for project testApp ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/audio_demo.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../testApp_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/audio_demo.d" -MT"src/audio_demo.o" -o "src/audio_demo.o" "../src/audio_demo.c"
+../src/audio_demo.c:243:2: error: expected identifier or '(' before 'return'
+  return XST_SUCCESS;
+  ^~~~~~
+../src/audio_demo.c:244:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+../src/audio_demo.c: In function 'AudioRunDemo':
+../src/audio_demo.c:241:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/subdir.mk:29: src/audio_demo.o] Error 1
+04:14:20 **** Auto Build of configuration Debug for project testApp ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/audio_demo.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../testApp_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/audio_demo.d" -MT"src/audio_demo.o" -o "src/audio_demo.o" "../src/audio_demo.c"
+../src/audio_demo.c:244:2: error: expected identifier or '(' before 'return'
+  return XST_SUCCESS;
+  ^~~~~~
+../src/audio_demo.c:245:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+../src/audio_demo.c: In function 'AudioRunDemo':
+../src/audio_demo.c:242:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/subdir.mk:29: src/audio_demo.o] Error 1
+04:14:51 **** Auto Build of configuration Debug for project testApp ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/audio_demo.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../testApp_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/audio_demo.d" -MT"src/audio_demo.o" -o "src/audio_demo.o" "../src/audio_demo.c"
+Finished building: ../src/audio_demo.c
+ 
+Building target: testApp.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../testApp_bsp/ps7_cortexa9_0/lib -o "testApp.elf"  ./src/audio_demo.o ./src/main.o ./src/timer_ps.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: testApp.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size testApp.elf  |tee "testApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41132	   1568	19731256	19773956	12dba04	testApp.elf
+Finished building: testApp.elf.size
+ 
+04:15:21 **** Incremental Build of configuration Debug for project testApp ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
